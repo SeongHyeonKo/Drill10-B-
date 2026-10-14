@@ -1,7 +1,6 @@
 from pico2d import *
 import random
 
-
 # Game object class here
 class Grass:
     def __init__(self): 
@@ -27,15 +26,23 @@ class Boy:
 
 
 class Ball:
+    #random_number = random.randint(0, 1)
+
     def __init__(self):
         self.x, self.y = random.randint(100, 700), 90
-        self.image = load_image('ball21x21.png')
+        self.image0 = load_image('ball21x21.png')
+        self.image1 = load_image('ball41x41.png')
+        self.number = random.randint(0, 1)
 
     def update(self):
         self.y += 5
 
     def draw(self):
-        self.image.clip_draw(0, 0, 21, 21, self.x, self.y)
+        if self.number == 0:
+            self.image0.clip_draw(0, 0, 21, 21, self.x, self.y)
+        else:
+            self.image1.clip_draw(0, 0, 41, 41, self.x, self.y)
+
 
 
 def handle_events():
