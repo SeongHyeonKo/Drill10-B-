@@ -65,6 +65,10 @@ def reset_world():
     team = [Boy() for i in range(11)]
     world += team
 
+    # global ball 20 
+    ball20 = [Ball() for i in range(20)]
+    world += ball20
+
 # 게임 루프 코드
 def update_world():
     for o in world:
