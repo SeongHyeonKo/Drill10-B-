@@ -35,7 +35,7 @@ class Ball:
         self.number = random.randint(0, 1)
 
     def update(self):
-        self.y += 5
+         self.y += random.randint(1, 10)
 
     def draw(self):
         if self.number == 0:
