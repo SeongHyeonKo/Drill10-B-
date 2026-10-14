@@ -25,8 +25,12 @@ class Boy:
     def draw(self):
         self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y)
 
+
 class Ball:
-    pass
+    def __init__(self):
+        self.x, self.y = random.randint(100, 700), 90
+        self.image = load_image('ball21x21.png')
+
 
 
 def handle_events():
@@ -51,10 +55,6 @@ def reset_world():
     global grass
     grass = Grass()
     world.append(grass)
-
-    # 소년 객체 생성
-   # global boy
-   # boy = Boy()
 
     # global team
     team = [Boy() for i in range(11)]
